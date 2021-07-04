@@ -13,5 +13,5 @@ mongoose.connect("mongodb+srv://admin:admin@cluster0.4sjwu.mongodb.net/myFirstDa
 //responde com uma msg no browser
 app.use("/", require("./src/routes"));
 
-//define a porta 3000 do localhost e inicia o servidor
-app.listen(3000, () => console.log("servidor up"));
+//define a porta 3001 do localhost e inicia o servidor
+app.listen( process.env.PORT || 3001 )
