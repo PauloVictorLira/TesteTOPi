@@ -1,11 +1,10 @@
 {
-  "name": "teste-topi",
+  "name": "meals",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -18,9 +17,10 @@
   },
   "homepage": "https://github.com/PauloVictorLira/TesteTOPi#readme",
   "dependencies": {
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.9"
+    "bootstrap": "^5.0.2",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.2",
+    "mongoose": "^5.13.2",
+    "require-dir": "^1.2.0"
   }
 }
