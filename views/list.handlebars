@@ -2,8 +2,8 @@
 <div class="container">
     <main class="row">
         <form action="" method="POST" class="col-md-3 col-xs-12 offset-md-9 px-0 py-3">
-            <input type="search" placeholder="Busque por uma refeição" name="search" aria-label="Busque por uma refeição"
-                class="form-control form-control-sm col-10 float-left">
+            <input type="search" placeholder="Busque por uma refeição" name="search"
+                aria-label="Busque por uma refeição" class="form-control form-control-sm col-10 float-left">
             <button type="button" class="btn btn-primary float-right col-2 pt-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
                     viewBox="0 0 16 16">
@@ -13,11 +13,13 @@
             </button>
         </form>
 
-        {{#each meals}} 
-            <article class="row my-4 mx-1">
-                <img class="img-thumbnail col-md-3 col-xs-12 p-0" src="{{strMealThumb}}">
-
-            </article>
+        {{#each meals}}
+        <article class="row my-4 mx-1">
+            <img class="img-thumbnail col-md-3 col-xs-12 p-0" src="{{strMealThumb}}">
+            <p>{{strMeal}}</p>
+            <p>{{strCategory}}</p>
+            <p>{{strArea}}</p>
+        </article>
         {{/each}}
 
     </main>

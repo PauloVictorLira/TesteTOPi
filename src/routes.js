@@ -2,7 +2,7 @@
 const express = require('express');
 
 //importa o controller menu
-const Menu = require("./controllers/Menu");
+const Menu = require("./controllers/menu");
 
 //instancia função router
 var routes = express.Router();
