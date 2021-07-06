@@ -1,0 +1,39 @@
+.card__p{
+    overflow-y: scroll;
+    height: 173px;     
+}
+.hidden{
+    display: none;
+}
+
+/*====== SCROLL ======*/
+
+.card-text {
+    overflow: hidden;
+    padding-right: 11px;
+}
+
+.card-text:hover {
+    overflow-y: scroll;
+    padding-right: 0;
+}
+
+.card-text::-webkit-scrollbar {
+	-webkit-appearance: none;
+}
+
+.card-text::-webkit-scrollbar:vertical {
+	width: 11px;
+}
+
+.card-text::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	border: 2px solid white;
+	background-color: rgba(193, 193, 193);
+}
+
+.card-text::-webkit-scrollbar-thumb:hover {
+	border-radius: 8px;
+	border: 2px solid white;
+	background-color: rgba(168, 168, 168);
+}

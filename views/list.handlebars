@@ -1,10 +1,10 @@
 {{!-- Não é necessário o corpo do HTML (heady,body), pois já foi setado no template default --}}
 <div class="container">
     <main class="row">
-        <form action="" method="POST" class="col-md-3 col-xs-12 offset-md-9 px-0 py-3">
-            <input type="search" placeholder="Busque por uma refeição" name="search"
-                aria-label="Busque por uma refeição" class="form-control form-control-sm col-10 float-left">
-            <button type="button" class="btn btn-primary float-right col-2 pt-0">
+        <form action="" method="POST" class="col-lg-4 col-md-5 col-xs-12 offset-lg-8 offset-md-7 py-3">
+            <input type="search" placeholder="Busque por uma refeição" name="search" aria-label="Busque por uma refeição"
+                class="form-control form-control-sm col-10 float-left">
+            <button type="button" class="btn btn-primary float-right col-2 pt-0 px-0">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
                     viewBox="0 0 16 16">
                     <path
@@ -13,14 +13,27 @@
             </button>
         </form>
 
-        {{#each meals}}
-        <article class="row my-4 mx-1">
-            <img class="img-thumbnail col-md-3 col-xs-12 p-0" src="{{strMealThumb}}">
-            <p>{{strMeal}}</p>
-            <p>{{strCategory}}</p>
-            <p>{{strArea}}</p>
-        </article>
-        {{/each}}
+        <section id="meals">
+            {{#each meals}} 
+                <article class="col-lg-4 col-md-6 float-left mb-4 hidden">
+                    
+                    <div class="card">                        
+                        <img src="{{strMealThumb}}" class="card-img-top">
+                        <small class="bg-primary w-100 p-2 text-white"> {{strCategory}} / {{strArea}} </small>
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">{{strMeal}}</h5>
+                            <p class="card-text text-secondary card__p">{{strInstructions}}</p>
+                        </div>
+                    </div>
+                </article>              
+                
+            {{/each}}
+
+            <div class="text-center mb-5">
+                <button class="btn btn-primary" id="meals__btn" > Carregar mais </button>
+            </div>
+            
+        </section>      
 
     </main>
 </div>

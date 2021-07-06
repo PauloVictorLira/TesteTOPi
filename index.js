@@ -1,8 +1,9 @@
 //importa os pacotes necessários
 const express = require("express");
 const mongoose = require("mongoose");
-const requireDir = require('require-dir');
-const handlebars = require('express-handlebars'); // necessário para conseguir interpolar o back no html
+const requireDir = require('require-dir'); //disponibiliza diretórios
+// necessário para conseguir interpolar o back no html
+const handlebars = require('express-handlebars'); //passar variáveis do back no frontend
 
 //instancia o express
 const app = express();
@@ -12,9 +13,10 @@ mongoose.connect("mongodb+srv://admin:admin@cluster0.4sjwu.mongodb.net/myFirstDa
 
 //requere o diretório de models
 requireDir('./src/models');
+//usa o diretório src no frontend (css e js)
 app.use(express.static(__dirname + '/src'));
 
-// Configuração do bodyParser
+// Configuração pra conseguir acessar os inputs de um form
 app.use(express.json());
 app.use(express.urlencoded({
     extended: true
@@ -25,8 +27,8 @@ app.use("/", require("./src/routes"));
 
 //configuração do handlebars
 app.engine( 'handlebars' , handlebars({ 
-    defaultLayout: "main", //views/layouts/main será nosso template html
-    runtimeOptions: { // necessário para manipular objetos passados para o html
+    defaultLayout: "main", //views/layouts/main será o template html
+    runtimeOptions: { // necessário para manipular objetos JSON passados para o html
         allowProtoPropertiesByDefault: true,
         allowProtoMethodsByDefault: true,
     }, 
@@ -35,4 +37,4 @@ app.set('view engine','handlebars');
 
 //define a porta para o servidor 
 // process.env.PORT -> necessário por conta do Heroku
-app.listen( process.env.PORT || 3001 )
+app.listen( process.env.PORT || 3001 , console.log("Server ok"))
